@@ -1,10 +1,14 @@
-function countOcc(str1, str2){
-    let count = 0
-    for(let i = 0; i < str1.length; i++){
-        if(str1[i] === str2){
-            count++
+// with split we can convert string into array. how to doit without string
+// Find the longest word in a sentence
+function longestWord(str) {
+    str = str.split(" ");
+
+    let longest = "";
+    for (let i = 0; i < str.length; i++) {
+        if (str[i].length > longest.length) {
+            longest = str[i];
         }
     }
-    return count
+    return longest;
 }
-console.log(countOcc("hello",'l'));
+console.log(longestWord("Find the longest word in the sentence"));
