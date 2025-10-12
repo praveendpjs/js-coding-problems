@@ -6,16 +6,16 @@
 // }
 
 // Example2: Using filter and indexOf()
-// function removeDuplicate(arr){
-//     return arr.filter((val, index, self) => self.indexOf(val) === index)
-// }
+function removeDuplicate(arr){
+    return arr.filter((val, index, self) => self.indexOf(val) === index)
+}
 
 // Example3: Using reduce method
-function removeDuplicate(arr){
-    return arr.reduce((unique, item) =>{
-        return unique.includes(item) ? unique: [...unique,item]
-    },[])
-}
+// function removeDuplicate(arr){
+//     return arr.reduce((unique, item) =>{
+//         return unique.includes(item) ? unique: [...unique,item]
+//     },[])
+// }
 
 
 // Example4: Using for loop

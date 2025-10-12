@@ -1,14 +1,8 @@
-// with split we can convert string into array. how to doit without string
-// Find the longest word in a sentence
-function longestWord(str) {
-    str = str.split(" ");
-
-    let longest = "";
-    for (let i = 0; i < str.length; i++) {
-        if (str[i].length > longest.length) {
-            longest = str[i];
-        }
+function reverseStr(str){
+    let reversed = '';
+    for(let i = str.length-1; i >=0 ; i--){
+        reversed += str[i]
     }
-    return longest;
+    return reversed
 }
-console.log(longestWord("Find the longest word in the sentence"));
+console.log(reverseStr("praveen"));
