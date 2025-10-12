@@ -1,4 +1,3 @@
-// The paranthesis must be opened and closed properly eg: (()), (((()))) is correct )(, )()is wrong
 // Return true if given two strings are anagrams (Eg: (silent, listen) => both words have same letters)
 
 // This solution is not optimal and takes more time
@@ -12,18 +11,24 @@ function findAnagram(str1, str2){
     const frequencyMap1 = {} 
     const frequencyMap2 = {}
     for (const char of str1) {
-        if(frequencyMap1[char]){
-            frequencyMap1[char]+=1
-        } else{
-            frequencyMap1[char] = 0
-        }
+        frequencyMap1[char] = (frequencyMap1[char]||0)+1
+
+        // If you don't get the above expression this is what it does
+        // if(frequencyMap1[char]){
+        //     frequencyMap1[char]+=1
+        // } else{
+        //     frequencyMap1[char] = 0
+        // }
     }
     for (const char of str2) {
-        if(frequencyMap2[char]){
-            frequencyMap2[char]+=1
-        } else{
-            frequencyMap2[char] = 0
-        }
+        frequencyMap2[char] = (frequencyMap2[char]||0)+1
+
+        // If you don't get the above expression this is what it does
+        // if(frequencyMap2[char]){
+        //     frequencyMap2[char]+=1
+        // } else{
+        //     frequencyMap2[char] = 0
+        // }
     }
     for (const char in frequencyMap1) {
         if(frequencyMap1[char] !== frequencyMap2[char]){
@@ -32,5 +37,4 @@ function findAnagram(str1, str2){
     }
     return true
 }
-console.log(findAnagram("demo", "moed"));
-
+console.log(findAnagram("silent", "listen"));
