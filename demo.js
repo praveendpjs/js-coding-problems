@@ -1,36 +1,27 @@
-// The paranthesis must be opened and closed properly eg: (()), (((()))) is correct )(, )()is wrong
-// Return true if given two strings are anagrams (Eg: (silent, listen) => both words have same letters)
-
-// This solution is not optimal and takes more time
-function findAnagram(str1, str2){
-    // remove spaces and convert the str to lowercase
-    str1 = str1.replace(/\s+/g).toLowerCase()
-    str2 = str2.replace(/\s+/g).toLowerCase()
-    if(str1.length !== str2.length){
-        return false
-    }
-    const frequencyMap1 = {} 
-    const frequencyMap2 = {}
-    for (const char of str1) {
-        if(frequencyMap1[char]){
-            frequencyMap1[char]+=1
-        } else{
-            frequencyMap1[char] = 0
+function intToRoman(num) {
+    const romanMap = [
+        { value: 1000, symbol: 'M' },
+        { value: 900, symbol: 'CM' },
+        { value: 500, symbol: 'D' },
+        { value: 400, symbol: 'CD' },
+        { value: 100, symbol: 'C' },
+        { value: 90, symbol: 'XC' },
+        { value: 50, symbol: 'L' },
+        { value: 40, symbol: 'XL' },
+        { value: 10, symbol: 'X' },
+        { value: 9, symbol: 'IX' },
+        { value: 5, symbol: 'V' },
+        { value: 4, symbol: 'IV' },
+        { value: 1, symbol: 'I' },
+    ]
+    let roman = '';
+    for(const i of romanMap){
+        while (num >= i.value) {
+            roman += i.symbol;
+            num -= i.value;
         }
     }
-    for (const char of str2) {
-        if(frequencyMap2[char]){
-            frequencyMap2[char]+=1
-        } else{
-            frequencyMap2[char] = 0
-        }
-    }
-    for (const char in frequencyMap1) {
-        if(frequencyMap1[char] !== frequencyMap2[char]){
-            return false
-        }
-    }
-    return true
+    
+    return roman
 }
-console.log(findAnagram("demo", "moed"));
-
+console.log(intToRoman(10));
