@@ -1,15 +1,11 @@
-function isBalanced(str){
-    let stack = [];
-    for(char of str){
-        if(char === "("){
-            stack.push(char)
-        } else if(char === ")"){
-            if(stack.length === 0){
-                return false
-            }
-            stack.pop()
-        }
+function reverse(x) {
+    let str = String(x)
+    let res = ""
+    for(let i = str.length-1; i >= 0; i--){
+        res += str[i];
     }
-    return stack.length === 0;
-}
-console.log(isBalanced(""));
+    res = Number(res)
+    return res
+    
+};
+console.log(reverse(321));

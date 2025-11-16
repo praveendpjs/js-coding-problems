@@ -16,4 +16,4 @@ function nonRepeating(str){
     return null
 }
 
-console.log(nonRepeating("aaabbbc"));
+console.log(nonRepeating("aaabbbccdllllf"));
