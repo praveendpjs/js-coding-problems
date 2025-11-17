@@ -15,9 +15,9 @@ function findAnagram(str1, str2){
 
         // If you don't get the above expression this is what it does
         // if(frequencyMap1[char]){
-        //     frequencyMap1[char]+=1
+        //     frequencyMap1[char]++
         // } else{
-        //     frequencyMap1[char] = 0
+        //     frequencyMap1[char] = 1
         // }
     }
     for (const char of str2) {
@@ -25,9 +25,9 @@ function findAnagram(str1, str2){
 
         // If you don't get the above expression this is what it does
         // if(frequencyMap2[char]){
-        //     frequencyMap2[char]+=1
+        //     frequencyMap2[char]++
         // } else{
-        //     frequencyMap2[char] = 0
+        //     frequencyMap2[char] = 1
         // }
     }
     for (const char in frequencyMap1) {
