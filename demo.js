@@ -1,11 +1,11 @@
-function reverse(x) {
-    let str = String(x)
-    let res = ""
-    for(let i = str.length-1; i >= 0; i--){
-        res += str[i];
-    }
-    res = Number(res)
-    return res
+let out = ""
+for(let i = 0; i < 10; i++){
     
-};
-console.log(reverse(321));
+    for(let j = 0; j < i; j++){
+        out += '*'
+        
+    }
+    out = out + '\n'
+}
+console.log(out);
+
