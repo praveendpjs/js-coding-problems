@@ -27,7 +27,7 @@ var isPalindrome = function(x) {
     return x === reversed || x === Math.floor(reversed / 10);
 };
 
-// String conversion:
+// 2) String conversion:
 var isPalindrome = function(x) {
     // convert number to string
     const str = x.toString();

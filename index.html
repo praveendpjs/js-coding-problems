@@ -1,32 +1,29 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Product List</title>
-    </head>
-    <body>
-        <h1>Our Products</h1>
-        <!-- <p id="productList"></p> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return validate()" action="">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password">
+        <button id="submit" type="submit">Submit</button>
+    </form>
 
-        <ul id="productList"></ul>
-
-        <script>
-                const products = [
-        { name: "Laptop", price: 1200 },
-        { name: "Mouse", price: 25 },
-        { name: "Keyboard", price: 75 },
-        { name: "Monitor", price: 300 },
-        { name: "Webcam", price: 50 }
-    ];
-
-    const productListElement = document.getElementById("productList");
-
-    products.forEach(product => {
-        const listItem = document.createElement("li");
-        listItem.innerText = product.name;
-        productListElement.appendChild(listItem);
-    });
-        </script>
-    </body>
-    </html>
+    <script>
+        function validate(){
+            let pwd = document.getElementById('password')
+        let submit = document.getElementById('submit')
+        if(pwd.value.length < 6){
+            alert("The length of password should be more than 6")
+            return false
+        }else{
+            return true
+        }
+        }
+        
+    </script>
+</body>
+</html>
